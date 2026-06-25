@@ -5,12 +5,15 @@ from crear_pedido_venta import crear_tabla_pedido_venta
 from insertar_estado_mesa import insertar_estado_mesa
 from insertar_mesa import insertar_mesa
 from agregar_pedido import agregar_pedido
-# Importamos todas las funciones del CRUD
-from crud_pedido import agregar_pedido, ver_pedidos, actualizar_pedido, eliminar_pedido, ver_mesas
+from eliminar_pedido import eliminar_pedido
+from actualizar_pedido import actualizar_pedido
+from ver_pedidos import ver_pedidos
+from ver_estado_mesas import ver_mesas
+
+
 
 def mostrar_menu():
     print("\n================= MENU CHICKEN BIKER =================")
-    print("0. Instalar Base de Datos (Crear y cargar datos iniciales)")
     print("1. Agregar nuevo pedido")
     print("2. Ver todos los pedidos")
     print("3. Actualizar estado de un pedido")
@@ -28,10 +31,7 @@ def main():
         mostrar_menu()
         opcion = input("Seleccione una opcion: ")
         
-        if opcion == "0":
-            crear_tabla_estado_mesa(); crear_tabla_mesa(); crear_tabla_pedido_venta()
-            insertar_estado_mesa(); insertar_mesa(); insertar_pedido_venta()
-        elif opcion == "1":
+        if opcion == "1":
             agregar_pedido(conexion)
         elif opcion == "2":
             ver_pedidos(conexion)
