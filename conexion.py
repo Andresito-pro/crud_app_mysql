@@ -11,7 +11,8 @@ def conectar():
             host=os.getenv("DB_HOST"),
             port=int(os.getenv("DB_PORT")),
             database=os.getenv("DB_NAME"),
-            user=os.getenv("DB_USER")
+            user=os.getenv("DB_USER"),
+            password=os.getenv("DB_PASS")
         )
 
         print("Conexion a la base de datos exitosa")
@@ -21,3 +22,8 @@ def conectar():
         print("Error al conectar a la base de datos")
         print(e)
         return None
+# ... (todo tu código anterior)
+
+# LLAMADA A LA FUNCIÓN
+if __name__ == "__main__":
+    conectar()
